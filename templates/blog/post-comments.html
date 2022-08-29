@@ -11,19 +11,19 @@
 {% endif %}
 <h4> Comments </h4>
 {% for comment in post.comments.all %}
-<div class="row" style="border-top pt-2;">
+<div class="row border-top pt-2;">
   <div class="col">
   <strong> Posted by {{ comment.creator }} on 
     {{ comment.created_at|date:"M, d Y h:i" }}</strong>
   </div>
 </div>
-<div class="row" style="border-bottom;">
+<div class="row border-bottom">
     <div class="col">
         <p>{{ comment.content }}</p>
     </div>
 </div>
 {% empty %}
-    <div class="row" style="border-top border-bottom;">
+    <div class="row border-top border-bottom;">
         <div class="col">
             <p>No comments.</p>
         </div>

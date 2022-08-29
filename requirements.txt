@@ -1,1 +1,4 @@
-crispy-bootstrap5
+crispy_bootstrap5
+django-configurations
+dj-database-url
+django[argon2]
