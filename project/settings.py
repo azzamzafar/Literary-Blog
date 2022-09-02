@@ -31,7 +31,7 @@ class Dev(Configuration):
     DEBUG = values.BooleanValue(True)
     ALLOWED_HOSTS = values.ListValue()
 
-
+    AUTH_USER_MODEL = "blogauth.User"
     # Application definition
 
     INSTALLED_APPS = [
@@ -42,6 +42,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'blog',
+        'blogauth',
         "crispy_forms",
         "crispy_bootstrap5"
     ]

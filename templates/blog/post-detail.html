@@ -4,5 +4,15 @@
 <h4 style="text-align:center;"> {{ post.title }}</h4>
 <p style="margin-left: 10px; margin-right:20px; text-align:justify;"> {{ post.content }}</p>
 <hr>
+{% if post.author.profile %}
+<div class="container">
+<div class="row justify-content-start">
+    <div class="col col-md-3">
+        <strong> {{ post.author }} </strong>
+        <p> {{ post.author.profile.bio }}</p>
+    </div>
+</div>
+</div>
+{% endif %}
 {% include "blog/post-comments.html" %}
 {% endblock %}
