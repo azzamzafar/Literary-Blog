@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django_registration.backends.activation.views import RegistrationView
+from blogauth.forms import BlogRegistrationForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("blogs/",include('blog.urls')),
+    path("accounts/register/", RegistrationView.as_view(form_class=BlogRegistrationForm),name="django_registration_register"),
+    path("accounts/",include("django_registration.backends.activation.urls"))
 ]

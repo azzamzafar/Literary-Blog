@@ -32,6 +32,10 @@ class Dev(Configuration):
     ALLOWED_HOSTS = values.ListValue()
 
     AUTH_USER_MODEL = "blogauth.User"
+
+    #django-registration
+    ACCOUNT_ACTIVATION_DAYS = 7
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     # Application definition
 
     INSTALLED_APPS = [
