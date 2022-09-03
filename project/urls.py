@@ -20,7 +20,11 @@ from blogauth.forms import BlogRegistrationForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("blogs/",include('blog.urls')),
-    path("accounts/register/", RegistrationView.as_view(form_class=BlogRegistrationForm),name="django_registration_register"),
+    path("",include('blog.urls')),
+
+    path("accounts/profile/", include('blogauth.urls')),
+    path("accounts/",include('django.contrib.auth.urls')),
+
+    path("accounts/register/", RegistrationView.as_view(form_class=BlogRegistrationForm),                   name="django_registration_register"),
     path("accounts/",include("django_registration.backends.activation.urls"))
 ]

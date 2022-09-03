@@ -39,6 +39,7 @@ class Dev(Configuration):
     # Application definition
 
     INSTALLED_APPS = [
+        'blogauth',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -46,7 +47,6 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'blog',
-        'blogauth',
         "crispy_forms",
         "crispy_bootstrap5"
     ]
