@@ -36,6 +36,15 @@ class Dev(Configuration):
     #django-registration
     ACCOUNT_ACTIVATION_DAYS = 7
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+    # allauth settings.
+    SITE_ID = 1
+    ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+    ACCOUNT_EMAIL_REQUIRED = True
+    ACCOUNT_USERNAME_REQUIRED = False
+    ACCOUNT_AUTHENTICATION_METHOD = "email"
+
     # Application definition
 
     INSTALLED_APPS = [
@@ -48,7 +57,11 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         'blog',
         "crispy_forms",
-        "crispy_bootstrap5"
+        "crispy_bootstrap5",
+        "allauth",
+        "allauth.account",
+        "allauth.socialaccount",
+        "allauth.socialaccount.providers.google",
     ]
 
     MIDDLEWARE = [

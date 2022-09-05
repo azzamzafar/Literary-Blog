@@ -1,15 +1,23 @@
 {% extends "base.html" %}
+{% load cache %}
 {% block content%}
 
 <h4 style="text-align:center;"> {{ post.title }}</h4>
-<p style="margin-left: 10px; margin-right:20px; text-align:justify;"> {{ post.content }}</p>
+<p style="margin-left: 10px; margin-right:20px; text-align:justify;">
+   {% cache 3600 postcontent %} 
+    {{ post.content }}
+    {% endcache %}
+</p>
 <hr>
 {% if post.author.profile %}
 <div class="container">
 <div class="row justify-content-start">
     <div class="col col-md-3">
         <strong> {{ post.author }} </strong>
-        <p> {{ post.author.profile.bio }}</p>
+        <p>{% cache 3600  writerbio %} 
+            {{ post.author.profile.bio }}
+            {% endcache %}
+        </p>
     </div>
 </div>
 </div>

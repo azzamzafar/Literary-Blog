@@ -8,6 +8,8 @@
       
     </div>
   </div>
+  {% else %}
+  <p><a href="{% url 'login' %}">Login</a> to add comments.</p>
 {% endif %}
 <h4> Comments </h4>
 {% for comment in post.comments.all %}
