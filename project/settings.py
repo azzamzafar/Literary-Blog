@@ -45,6 +45,7 @@ class Dev(Configuration):
     ACCOUNT_USERNAME_REQUIRED = False
     ACCOUNT_AUTHENTICATION_METHOD = "email"
 
+
     # Application definition
 
     INSTALLED_APPS = [
@@ -62,9 +63,11 @@ class Dev(Configuration):
         "allauth.account",
         "allauth.socialaccount",
         "allauth.socialaccount.providers.google",
+        "debug_toolbar"
     ]
 
     MIDDLEWARE = [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
@@ -200,7 +203,8 @@ class Dev(Configuration):
     USE_L10N = True
 
     USE_TZ = True
-
+    # debug toolbar visibility ip
+    INTERNAL_IPS = ["127.0.0.1"]
 
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/3.2/howto/static-files/

@@ -7,7 +7,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 def index(request):
-  posts = Post.objects.filter(published_at__lte=timezone.now())
+  posts = (Post.objects
+    .filter(published_at__lte=timezone.now())
+    .order_by("-published_at")
+    .select_related("author"))
   # log
   logger.debug(f'Got {len(posts)} posts')
   return render(request, "blog/index.html",{"posts": posts})

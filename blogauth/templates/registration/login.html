@@ -22,13 +22,19 @@
         <button type="submit" class="btn btn-primary">Log In</button>
         <input type="hidden" name="next" value="{{ next}}">
         </form>
+        <!-- Registration Link -->
         <div class="card">
           <div class="card-body" style="width:36rem;">
               <p>New User?<a href="{% url 'django_registration_register' %}"> Create Account</a></p>
           </div>
         </div> 
-        <p>Forgot Password? <a href="{% url 'password_reset' %}"> Change Password</a></p>
-        
+        <!-- Change Password -->
+        <div class="card">
+          <div class="card-body" style="width:36rem;">
+            <p>Forgot Password? <a href="{% url 'password_reset' %}"> Change Password</a></p>
+          </div>
+        </div>
+        <!-- Google Login -->
         <div class="card">
           <div class="card-body" style="width:36rem;">
               <a href="{% url 'google_login' %}">Log In with Google</a>

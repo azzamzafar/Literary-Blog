@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django_registration.backends.activation.views import RegistrationView
 from blogauth.forms import BlogRegistrationForm
+from django.conf import settings
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +31,7 @@ urlpatterns = [
     path("accounts/",include("django_registration.backends.activation.urls")),
     path("accounts/",include('allauth.urls'))
 ]
+if settings.DEBUG:
+    urlpatterns+=[
+        path("__debug__/",include("debug_toolbar.urls"))
+    ]
