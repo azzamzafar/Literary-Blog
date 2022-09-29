@@ -63,7 +63,8 @@ class Dev(Configuration):
         "allauth.account",
         "allauth.socialaccount",
         "allauth.socialaccount.providers.google",
-        "debug_toolbar"
+        "debug_toolbar",
+        "rest_framework",
     ]
 
     MIDDLEWARE = [

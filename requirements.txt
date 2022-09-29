@@ -1,7 +1,11 @@
 crispy_bootstrap5
-django-configurations
 dj-database-url
 django[argon2]
-django-registration
-django_allauth
-django-debug-toolbar
+django-allauth==0.51.0
+django-configurations==2.3.2
+django-crispy-forms==1.14.0
+django-debug-toolbar==3.6.0
+django-phonenumber-field==7.0.0
+django-registration==3.3
+Django==4.0.3
+djangorestframework

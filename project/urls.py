@@ -27,9 +27,11 @@ urlpatterns = [
     path("accounts/profile/", include('blogauth.urls')),
     path("accounts/",include('django.contrib.auth.urls')),
 
-    path("accounts/register/", RegistrationView.as_view(form_class=BlogRegistrationForm),                   name="django_registration_register"),
+    path("accounts/register/", RegistrationView.as_view(form_class=BlogRegistrationForm),        name="django_registration_register"),
+    
     path("accounts/",include("django_registration.backends.activation.urls")),
-    path("accounts/",include('allauth.urls'))
+    path("accounts/",include('allauth.urls')),
+    path("api/v1/",include('blog.api.urls'))
 ]
 if settings.DEBUG:
     urlpatterns+=[
